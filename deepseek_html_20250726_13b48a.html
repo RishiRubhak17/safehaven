@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHaven - Your Personal Safety App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shield-alt"></i> SafeHaven</h1>
+            <p>Your personal safety companion</p>
+        </header>
+
+        <main>
+            <!-- Trusted Contacts Section -->
+            <section id="contacts-section" class="card">
+                <h2><i class="fas fa-users"></i> Trusted Contacts</h2>
+                <form id="contacts-form">
+                    <div class="form-group">
+                        <label for="best-friend">Best Friend</label>
+                        <input type="tel" id="best-friend" placeholder="+1234567890" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="parent-guardian">Parent/Guardian</label>
+                        <input type="tel" id="parent-guardian" placeholder="+1234567890" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="trusted-contact">Another Trusted Contact</label>
+                        <input type="tel" id="trusted-contact" placeholder="+1234567890" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="safe-address">Safe Home Address</label>
+                        <input type="text" id="safe-address" placeholder="Enter your safe location">
+                    </div>
+                    <button type="submit" class="btn">Save Contacts</button>
+                </form>
+                <div id="contacts-saved" class="hidden">
+                    <p><i class="fas fa-check-circle"></i> Contacts saved successfully!</p>
+                </div>
+            </section>
+
+            <!-- Emergency Features Section -->
+            <section class="card">
+                <h2><i class="fas fa-bell"></i> Emergency Features</h2>
+                <div class="emergency-buttons">
+                    <button id="sos-btn" class="btn emergency-btn">
+                        <i class="fas fa-bell"></i> SOS Alert
+                    </button>
+                    <button id="fake-call-btn" class="btn emergency-btn">
+                        <i class="fas fa-phone"></i> Fake Call
+                    </button>
+                    <button id="shake-sos-btn" class="btn emergency-btn">
+                        <i class="fas fa-hand-paper"></i> Shake for SOS (Press 'S' twice)
+                    </button>
+                </div>
+                <div id="sos-status" class="hidden"></div>
+            </section>
+
+            <!-- Danger Zone Info -->
+            <section id="danger-zone-section" class="card hidden">
+                <h2><i class="fas fa-exclamation-triangle"></i> Danger Zone Alert</h2>
+                <p id="danger-zone-message"></p>
+            </section>
+
+            <!-- Location Check -->
+            <section class="card">
+                <h2><i class="fas fa-map-marker-alt"></i> Location Check</h2>
+                <button id="check-location-btn" class="btn">
+                    <i class="fas fa-location-arrow"></i> Check My Location
+                </button>
+                <div id="location-info"></div>
+            </section>
+
+            <!-- AI Chatbot Section -->
+            <section class="card">
+                <h2><i class="fas fa-robot"></i> Emotional Support Chat</h2>
+                <div id="chat-container">
+                    <div id="chat-messages"></div>
+                    <div class="chat-input">
+                        <input type="text" id="user-message" placeholder="Type your message...">
+                        <button id="send-message" class="btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Fake Call Popup -->
+        <div id="fake-call-popup" class="hidden">
+            <div class="call-popup">
+                <div class="call-header">
+                    <h3>Incoming Call</h3>
+                    <p>Emergency Response</p>
+                </div>
+                <div class="call-body">
+                    <div class="caller-info">
+                        <i class="fas fa-user-shield"></i>
+                        <p>SafeHaven Support</p>
+                    </div>
+                    <div class="call-buttons">
+                        <button id="answer-call" class="call-btn answer"><i class="fas fa-phone"></i></button>
+                        <button id="decline-call" class="call-btn decline"><i class="fas fa-phone-slash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="ringtone" src="emergency-voice.mp3" loop></audio>
+
+    <script src="app.js"></script>
+</body>
+</html>

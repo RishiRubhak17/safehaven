@@ -1,0 +1,303 @@
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #5f27cd;
+    --accent-color: #1dd1a1;
+    --light-color: #f7f7f7;
+    --dark-color: #2f3542;
+    --danger-color: #ff4757;
+    --warning-color: #ff9f43;
+    --safe-color: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f1f2f6;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+}
+
+.emergency-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.emergency-btn {
+    background-color: var(--danger-color);
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.emergency-btn:hover {
+    background-color: #ff3f3f;
+}
+
+#contacts-saved {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--safe-color);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#sos-status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Chatbot Styles */
+#chat-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 15px;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: #f1f2f6;
+    border-bottom-left-radius: 5px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#user-message {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Fake Call Popup */
+#fake-call-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.call-popup {
+    background: white;
+    border-radius: 20px;
+    width: 300px;
+    overflow: hidden;
+    animation: ring 1.5s infinite;
+}
+
+.call-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.call-header h3 {
+    margin-bottom: 5px;
+}
+
+.call-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.caller-info {
+    margin-bottom: 30px;
+}
+
+.caller-info i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.call-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.call-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.call-btn.answer {
+    background-color: var(--safe-color);
+}
+
+.call-btn.decline {
+    background-color: var(--danger-color);
+}
+
+/* Danger Zone Alert */
+#danger-zone-section {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+#danger-zone-section h2 {
+    color: white;
+}
+
+/* Location Info */
+#location-info {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f1f2f6;
+    border-radius: 5px;
+}
+
+/* Animations */
+@keyframes ring {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .emergency-buttons {
+        grid-template-columns: 1fr;
+    }
+}
